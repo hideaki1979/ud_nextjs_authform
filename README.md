@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# お問い合わせフォームアプリ
 
-## Getting Started
+## 概要
+このアプリケーションはNext.jsを使用した問い合わせフォームの実装例です。ユーザーが簡単に問い合わせを送信でき、管理者はそれらを確認・管理できる機能を提供します。フォームバリデーション、認証機能、レスポンシブデザインなどを備えています。
 
-First, run the development server:
+## 技術スタック
 
+### フレームワーク
+- ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat&logo=next.js&logoColor=white) Next.js - Reactベースのフルスタックフレームワーク
+- ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black) React - UIコンポーネントライブラリ
+- ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) TypeScript - 型安全な開発環境
+
+### スタイリング
+- ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white) Tailwind CSS - ユーティリティファーストのCSSフレームワーク
+- ![shadcn/ui](https://img.shields.io/badge/-shadcn%2Fui-000000?style=flat&logo=react&logoColor=white) shadcn/ui - 再利用可能なUIコンポーネントライブラリ
+
+### フォーム管理
+- React Hook Form - フォーム状態管理とバリデーション
+- Zod - スキーマ検証ライブラリ
+
+### バックエンドサービス
+- ![Resend](https://img.shields.io/badge/-Resend-000000?style=flat&logo=mail&logoColor=white) Resend - メール送信APIサービス
+
+## 環境構築手順
+
+### 前提条件
+- Node.js 18.0.0以上
+- npm, yarn, pnpmまたはbunのいずれか
+
+### セットアップ手順
+
+1. リポジトリをクローン:
+```bash
+git clone https://github.com/hideaki1979/ud_nextjs_authform.git
+cd inquiryform-tutorial
+```
+
+2. 依存関係のインストール:
+```bash
+npm install
+# または
+yarn
+# または
+pnpm install
+# または
+bun install
+```
+
+3. 環境変数の設定:
+`.env.local`ファイルを作成し、必要な環境変数を設定:
+```
+RESEND_API_KEY="your RESEND API Key"
+NEXT_PUBLIC_BASE="http://localhost:3001"
+```
+
+4. 開発サーバーの起動:
 ```bash
 npm run dev
-# or
+# または
 yarn dev
-# or
+# または
 pnpm dev
-# or
+# または
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. ブラウザで [http://localhost:3000](http://localhost:3000) を開いてアプリケーションにアクセス
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 本番環境用ビルド (オプション)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+開発以外の環境で実行する場合は、アプリケーションをビルドして最適化されたバージョンを作成します:
 
-## Learn More
+```bash
+npm run build
+# または
+yarn build
+# または
+pnpm build
+# または
+bun build
+```
 
-To learn more about Next.js, take a look at the following resources:
+ビルド後、以下のコマンドで本番環境用サーバーを起動:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+# または
+yarn start
+# または
+pnpm start
+# または
+bun start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+注: `.next`フォルダはビルド時に自動的に生成されるため、GitHubにはプッシュされていません。上記の手順でビルドすると、このフォルダは自動的に作成されます。
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ライセンス
+MIT © [あなたの名前/組織名]
